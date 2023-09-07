@@ -1,13 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
-import Loader from './Loader'
+import Loader from '../../components/Loader'
 
-type SliderItemProps = {
-  src: string
-}
-
-const SliderItem = ({ src }: SliderItemProps) => {
+const SliderItem = ({ src }: { src: string }) => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -19,24 +15,20 @@ const SliderItem = ({ src }: SliderItemProps) => {
   }, [src])
 
   return (
-    <div className='aspect-[4/5] lg:aspect-[6/4]'>
+    <div className='h-screen'>
       {isLoading ? (
         <Loader />
       ) : (
         <img
           src={src}
-          className='fade-in h-full w-full object-cover object-center'
+          className='fade-in h-full w-full object-cover'
         />
       )}
     </div>
   )
 }
 
-type SliderComponentProps = {
-  data: Array<{ id: number; image: string }>
-}
-
-const Slider = ({ data }: SliderComponentProps) => {
+const Slider = ({ data }: { data: Array<{ id: number; image: string }> | null }) => {
   const properties = {
     autoplay: true,
     transitionDuration: 400,
@@ -46,15 +38,10 @@ const Slider = ({ data }: SliderComponentProps) => {
     infinite: true
   }
 
-  type Image = {
-    id: number
-    image: string
-  }
-
   return (
     <Slide {...properties}>
       {data &&
-        data.map((image: Image) => (
+        data.map(image => (
           <SliderItem
             key={image.id}
             src={image.image}

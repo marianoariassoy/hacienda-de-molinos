@@ -71,6 +71,9 @@ strong {
 .bg-cuatertiary {
   background-color: $color-cuatertiary;
 }
+.bg-tertiary-alpha {
+  background-color: rgba($color-tertiary, 0.5);
+}
 
 svg {
   fill: currentColor;

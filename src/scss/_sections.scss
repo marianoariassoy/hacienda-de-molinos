@@ -1,9 +1,15 @@
 .indicators {
   bottom: 2rem;
   position: absolute;
-  width: 100%;
-  z-index: 30;
+  left: 2.5rem;
+  z-index: 130;
+  @media (max-width: 980px) {
+    left: 1.5rem;
+  }
   li {
     margin: 0 0.3rem !important;
+    button::before {
+      background: white !important;
+    }
   }
 }

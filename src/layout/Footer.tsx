@@ -1,10 +1,19 @@
+import { useEffect } from 'react'
 import { Link } from 'wouter'
 import { menu } from '../data/data'
-import { Logo, Up, Line } from '../icons/icons'
+import { Logo, Up } from '../icons/icons'
 import Languages from './Languages'
 import Social from './Social'
+import { useDataContext } from '../context/useDataContext'
+import scroll from '../utils/scroll'
 
 const Footer = () => {
+  const { lan } = useDataContext()
+
+  useEffect(() => {
+    scroll()
+  }, [])
+
   return (
     <div className='px-6 lg:px-12 py-12 flex items-center text-white bg-tertiary'>
       <div className='flex-1 flex-grow'>
@@ -13,7 +22,12 @@ const Footer = () => {
             {menu.map((item, index) => (
               <li key={index}>
                 <Link href={` `}>
-                  <a>{item.title}</a>
+                  <a>
+                    {lan === 'ES' && item.title}
+                    {lan === 'EN' && item.title_en}
+                    {lan === 'FR' && item.title_fr}
+                    {lan === 'POR' && item.title_por}
+                  </a>
                 </Link>
               </li>
             ))}
@@ -29,11 +43,11 @@ const Footer = () => {
       </div>
       <div className='flex flex-1 flex-grow justify-end'>
         <a
-          href='#home'
-          className='flex flex-col items-center gap-y-1 scroll hover:text-black transition-all'
+          target='#home'
+          className='flex flex-col items-center gap-y-1 scroll hover:text-black transition-all animate-pulse cursor-pointer'
         >
           <Up />
-          <span className='text-sm'>Home</span>
+          <span className='font-secondary'>Home</span>
           <hr className='h-6 border-current border-l' />
         </a>
       </div>

@@ -1,7 +1,7 @@
 import { Link } from 'wouter'
+import Menu from './Menu'
 import Social from './Social'
 import Languages from './Languages'
-import Menu from './Menu'
 import { Logo } from '../icons/icons'
 
 const Header = () => {
@@ -11,8 +11,8 @@ const Header = () => {
   }
 
   return (
-    <section className='fixed w-full px-6 lg:px-12 py-12 flex items-start text-black z-50 transition-all font-secondary'>
-      <div className='flex items-center gap-x-4 flex-grow flex-1'>
+    <section className='fixed w-full px-6 lg:px-12 py-12 flex items-start z-50 transition-all font-secondary text-white'>
+      <div className='flex items-center gap-x-4 flex-grow flex-1 '>
         <div
           className='nav-menu z-50'
           onClick={OpenMenu}
@@ -36,7 +36,7 @@ const Header = () => {
         <Languages />
         <Social />
       </div>
-      <div className='menu-mobile fixed fade-in w-full h-full bg-tertiary top-0 left-0 z-40 hidden'>
+      <div className='menu-mobile fixed fade-in w-full h-full top-0 left-0 z-40 hidden bg-tertiary-alpha backdrop-blur-md transition-all'>
         <Menu />
       </div>
     </section>
