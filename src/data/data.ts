@@ -13,7 +13,7 @@ export const menu = [
     title_fr: 'Chambres',
     title_por: 'Quartos',
     path: '#habitaciones',
-    url: ''
+    url: '/habitaciones'
   },
   {
     title: 'Servicios',
@@ -21,7 +21,7 @@ export const menu = [
     title_fr: 'Services',
     title_por: 'Serviços',
     path: '#servicios',
-    url: ''
+    url: '/servicios'
   },
   {
     title: 'Restaurant',
@@ -29,7 +29,7 @@ export const menu = [
     title_fr: 'Restaurant',
     title_por: 'Restaurante',
     path: '#restaurant',
-    url: ''
+    url: '/restaurant'
   },
   {
     title: 'Ubicación',
@@ -37,7 +37,7 @@ export const menu = [
     title_fr: 'Location',
     title_por: 'Localização',
     path: '#ubicacion',
-    url: ''
+    url: '/ubicacion'
   },
   {
     title: 'Ruta del vino',
@@ -69,7 +69,7 @@ export const menu = [
     title_fr: 'Contact',
     title_por: 'Contato',
     path: '#contacto',
-    url: ''
+    url: '/contacto'
   }
 ]
 

@@ -1,8 +1,8 @@
 .indicators {
-  bottom: 2rem;
+  bottom: 3rem;
   position: absolute;
   left: 2.5rem;
-  z-index: 130;
+  z-index: 20;
   @media (max-width: 980px) {
     left: 1.5rem;
   }
