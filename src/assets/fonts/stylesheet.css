@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'Soleil';
+  src: url('Soleil-Light.woff2') format('woff2'), url('Soleil-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cherolina';
+  src: url('Cherolina.woff2') format('woff2'), url('Cherolina.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Collier';
+  src: url('Collier-Regular.woff2') format('woff2'), url('Collier-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Collier Bold';
+  src: url('Collier-Bold.woff2') format('woff2'), url('Collier-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Collier SemiBold';
+  src: url('Collier-SemiBold.woff2') format('woff2'), url('Collier-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Collier Thin';
+  src: url('Collier-Thin.woff2') format('woff2'), url('Collier-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}

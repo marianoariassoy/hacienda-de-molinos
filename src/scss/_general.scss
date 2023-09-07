@@ -1,0 +1,104 @@
+html,
+body {
+  accent-color: $color-primary;
+  color: $text-color-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @media (max-width: 980px) {
+    font-size: 14px;
+  }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  main {
+    flex: 1;
+  }
+}
+
+a {
+  color: currentColor;
+  &:hover {
+    color: currentColor;
+  }
+}
+
+.font-special {
+  font-family: 'Cherolina';
+}
+.font-secondary {
+  font-family: 'Collier';
+}
+.font-secondary-bold {
+  font-family: 'Collier Bold';
+  font-weight: bold;
+}
+.font-secondary-semibold {
+  font-family: 'Collier SemiBold';
+  font-weight: 600;
+}
+.font-secondary-thin {
+  font-family: 'Collier Thin';
+  font-weight: 100;
+}
+strong {
+  font-family: 'Collier Bold';
+}
+
+.text-primary {
+  color: $color-primary;
+}
+.text-secondary {
+  color: $color-secondary;
+}
+.text-tertiary {
+  color: $color-tertiary;
+}
+.text-cuatertiary {
+  color: $color-cuatertiary;
+}
+.bg-primary {
+  background-color: $color-primary;
+}
+.bg-secondary {
+  background-color: $color-secondary;
+}
+.bg-tertiary {
+  background-color: $color-tertiary;
+}
+.bg-cuatertiary {
+  background-color: $color-cuatertiary;
+}
+
+svg {
+  fill: currentColor;
+  polyline {
+    stroke: currentColor;
+  }
+  line {
+    stroke: currentColor;
+  }
+}
+
+.text-wrap {
+  text-wrap: balance;
+}
+
+.fade-in {
+  animation: fadeIn ease 0.3s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// input::placeholder,
+// textarea::placeholder {
+//   color: #1a1a1a;
+// }

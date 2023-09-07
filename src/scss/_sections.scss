@@ -1,0 +1,9 @@
+.indicators {
+  bottom: 2rem;
+  position: absolute;
+  width: 100%;
+  z-index: 30;
+  li {
+    margin: 0 0.3rem !important;
+  }
+}
