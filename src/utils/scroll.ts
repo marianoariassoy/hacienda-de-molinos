@@ -10,7 +10,7 @@ const scroll = () => {
     const targetId = this.getAttribute('target')
     const targetElement = document.querySelector(targetId)
     window.scrollTo({
-      top: targetElement.offsetTop - 80,
+      top: targetElement.offsetTop,
       behavior: 'smooth'
     })
   }

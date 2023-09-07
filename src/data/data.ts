@@ -116,3 +116,53 @@ export const dataContact = {
     required: 'Please complete this field'
   }
 }
+
+interface Texts {
+  [key: string]: {
+    title: string
+    subtitle: string
+    image?: string
+  }
+}
+
+export const textsNosotros: Texts = {
+  ES: {
+    title: 'pasado',
+    subtitle: 'y presente',
+    image: '/ En medio de los cerros Salteño'
+  },
+  EN: {
+    title: 'past',
+    subtitle: 'and future',
+    image: '/ In the middle of the Salteño hills'
+  },
+  FR: {
+    title: 'passé',
+    subtitle: 'et présent',
+    image: '/ Au milieu des collines de Salteño'
+  },
+  POR: {
+    title: 'passado',
+    subtitle: 'e presente',
+    image: '/ No meio das colinas de Salteño'
+  }
+}
+
+export const textsHabitaciones: Texts = {
+  ES: {
+    title: 'habitaciones',
+    subtitle: 'nuestras'
+  },
+  EN: {
+    title: 'rooms',
+    subtitle: 'our'
+  },
+  FR: {
+    title: 'chambres',
+    subtitle: 'nos'
+  },
+  POR: {
+    title: 'quartos',
+    subtitle: 'nossos'
+  }
+}
