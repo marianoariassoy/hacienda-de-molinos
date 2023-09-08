@@ -57,7 +57,7 @@ const Footer = () => {
             ))}
           </ul>
         </nav>
-        <div className='flex flex-col gap-y-2'>
+        <div className='flex flex-col gap-y-4'>
           <Languages />
           <Social />
         </div>

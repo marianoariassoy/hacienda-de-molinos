@@ -15,7 +15,7 @@ const Nosotros = () => {
             {textsNosotros[lan].title} <span className='block ml-12'> {textsNosotros[lan].subtitle} </span>
           </div>
         </div>
-        <div className='lg:w-[40%] flex items-end gap-x-3 '>
+        <div className='col lg:w-[40%] flex items-end gap-x-3'>
           <div className='text-vertical font-secondary'>{textsNosotros[lan].image}</div>
           <div>
             <img
@@ -25,7 +25,7 @@ const Nosotros = () => {
             />
           </div>
         </div>
-        <div className='lg:w-[60%] lg:pt-24'>
+        <div className='col lg:w-[60%] lg:pt-24'>
           <p className='text-wrap'>
             La Hacienda de Molinos es la posta obligada en la vuelta a los Valles Calchaquíes.
             <br />

@@ -2,7 +2,7 @@ import { Instagram, Booking, Facebook, TripAdvisor } from '../icons/icons'
 
 const Social = () => {
   return (
-    <nav className='flex gap-x-3 items-center [&>a:hover]:opacity-50'>
+    <nav className='flex gap-x-3 items-center [&>a:hover]:opacity-70 [&>a]:transition-all'>
       <a
         href='https://www.instagram.com/'
         target='_blank'

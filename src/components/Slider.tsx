@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
-import Loader from '../../components/Loader'
+import Loader from './Loader'
 
 const SliderItem = ({ src }: { src: string }) => {
   const [isLoading, setIsLoading] = useState(true)
@@ -15,7 +15,7 @@ const SliderItem = ({ src }: { src: string }) => {
   }, [src])
 
   return (
-    <div className='h-screen'>
+    <div className='flex justify-center items-center'>
       {isLoading ? (
         <Loader />
       ) : (
@@ -40,13 +40,12 @@ const Slider = ({ data }: { data: Array<{ id: number; image: string }> | null })
 
   return (
     <Slide {...properties}>
-      {data &&
-        data.map(image => (
-          <SliderItem
-            key={image.id}
-            src={image.image}
-          />
-        ))}
+      {data?.map(image => (
+        <SliderItem
+          key={image.id}
+          src={image.image}
+        />
+      ))}
     </Slide>
   )
 }

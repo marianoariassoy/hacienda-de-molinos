@@ -62,6 +62,9 @@ strong {
 .text-cuatertiary {
   color: $color-cuatertiary;
 }
+.text-dark {
+  color: $color-tertiary;
+}
 .bg-primary {
   background-color: $color-primary;
 }
@@ -104,7 +107,7 @@ svg {
   }
 }
 
-// input::placeholder,
-// textarea::placeholder {
-//   color: #1a1a1a;
-// }
+input::placeholder,
+textarea::placeholder {
+  color: $color-primary;
+}

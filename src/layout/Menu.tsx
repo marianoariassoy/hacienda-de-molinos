@@ -11,6 +11,7 @@ const Menu = () => {
   const [isHome, setIsHome] = useState(true)
 
   const closeMenu = () => {
+    document.querySelector('header')?.classList.toggle('text-white')
     document.querySelector('.nav-menu')?.classList.toggle('active')
     document.querySelector('.menu-mobile')?.classList.toggle('hidden')
   }

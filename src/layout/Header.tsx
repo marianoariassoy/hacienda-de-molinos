@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <section className='fixed w-full px-6 lg:px-12 py-12 flex items-start z-50 transition-all font-secondary'>
-      <div className='flex items-center gap-x-4 flex-grow flex-1 '>
+      <div className='flex items-center gap-x-4 flex-grow flex-1'>
         <div
           className='nav-menu z-50'
           onClick={OpenMenu}
@@ -27,7 +27,7 @@ const Header = () => {
         <Link href='/'>
           <a
             target='#home'
-            className='scroll hover:text-black transition-all logo -mt-2'
+            className='hover:opacity-70 transition-all logo-header '
           >
             <Logo />
           </a>

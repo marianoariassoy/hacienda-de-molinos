@@ -4,7 +4,7 @@ import axios from 'axios'
 import BeatLoader from 'react-spinners/BeatLoader'
 import { dataContact } from '../data/data'
 
-const Form = () => {
+const Form = ({ lan = 'ES' }) => {
   type Inputs = {
     name: string
     city: string
@@ -15,7 +15,6 @@ const Form = () => {
     message: string
   }
 
-  const lan = 'es'
   const [sended, setSended] = useState(false)
   const [sending, setSending] = useState(false)
   const [error, setError] = useState(false)
@@ -29,13 +28,13 @@ const Form = () => {
   const onSubmit = (data: Inputs) => {
     setSending(true)
     const sender = {
-      to: 'australclimatizacion.ing@gmail.com',
-      from: 'no-reply@australclimatizacion.com',
-      from_name: 'Austral Ingeniería',
+      to: 'hola@marianoarias.soy',
+      from: 'no-reply@ds.com',
+      from_name: 'Hacienda de Molinos',
       subject: 'Contacto'
     }
 
-    axios.post('http://australclimatizacion.com/backend/send-email.php', { ...data, ...sender }).then(data => {
+    axios.post('', { ...data, ...sender }).then(data => {
       if (data.data === 'success') {
         setSended(true)
         setSending(false)
@@ -61,7 +60,7 @@ const Form = () => {
           <div className='grid grid-cols-2 gap-4  '>
             <div>
               <input
-                className='w-full border-2 border-black h-11  px-4'
+                className='w-full border-2 h-11  px-4'
                 placeholder={dataContact[lan].name}
                 {...register('name', { required: true })}
               />
@@ -69,14 +68,14 @@ const Form = () => {
             </div>
             <div>
               <input
-                className='w-full border-2 border-black h-11  px-4'
+                className='w-full border-2 h-11  px-4'
                 placeholder={dataContact[lan].city}
                 {...register('city')}
               />
             </div>
             <div>
               <input
-                className='w-full border-2 border-black h-11  px-4'
+                className='w-full border-2 h-11  px-4'
                 placeholder={dataContact[lan].email}
                 {...register('email', { required: true })}
               />
@@ -84,14 +83,14 @@ const Form = () => {
             </div>
             <div>
               <input
-                className='w-full border-2 border-black h-11  px-4'
+                className='w-full border-2 h-11  px-4'
                 placeholder={dataContact[lan].location}
                 {...register('location')}
               />
             </div>
             <div>
               <input
-                className='w-full border-2 border-black h-11  px-4'
+                className='w-full border-2 h-11  px-4'
                 placeholder={dataContact[lan].phone}
                 {...register('phone', { required: true })}
               />
@@ -99,14 +98,14 @@ const Form = () => {
             </div>
             <div>
               <input
-                className='w-full border-2 border-black h-11  px-4'
+                className='w-full border-2 h-11  px-4'
                 placeholder={dataContact[lan].country}
                 {...register('country')}
               />
             </div>
           </div>
           <textarea
-            className='w-full border-2 border-black h-44  p-4 my-4 font-light'
+            className='w-full border-2 h-44  p-4 my-4 font-light'
             placeholder={dataContact[lan].message}
             {...register('message')}
           />
@@ -116,7 +115,7 @@ const Form = () => {
           ) : (
             <button
               type='submit'
-              className='font-bold bg-primary text-white h-11 hover:bg-black transition px-8'
+              className='font-secondary uppercase text-white p-4 transition-all px-12'
             >
               {dataContact[lan].send}
             </button>

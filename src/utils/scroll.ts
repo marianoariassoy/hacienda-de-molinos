@@ -1,6 +1,5 @@
 const scroll = () => {
   const links = document.querySelectorAll('.scroll')
-
   links.forEach(link => {
     link.addEventListener('click', smoothScroll)
   })
@@ -15,31 +14,32 @@ const scroll = () => {
     })
   }
 
-  //active section
-  // window.addEventListener('scroll', () => {
-  //   const sections = document.querySelectorAll('.section')
-  //   const navLinks = document.querySelectorAll('.nav-main .scroll')
+  const servicios = document.querySelector('#servicios') as HTMLElement
+  const contacto = document.querySelector('#contacto') as HTMLElement
+  const header = document.querySelector('header') as HTMLElement
 
-  //   sections.forEach((section, index) => {
-  //     const rect = section.getBoundingClientRect()
-  //     if (rect.top <= 50 && rect.bottom >= 50) {
-  //       navLinks.forEach(link => link.classList.remove('nav-active'))
-  //       navLinks[index].classList.add('nav-active')
-  //     }
-  //   })
-  // })
+  window.addEventListener('scroll', () => {
+    if (servicios === null || contacto === null) return
 
-  //header small
-  // const header = document.querySelector('header section')
-  // window.addEventListener('scroll', () => {
-  //   const currentScroll = window.scrollY
-  //   if (currentScroll > 10) {
-  //     header?.classList.add('header-small')
-  //     return
-  //   } else {
-  //     header?.classList.remove('header-small')
-  //   }
-  // })
+    const serviciosRect = servicios.getBoundingClientRect()
+    const contactoRect = contacto.getBoundingClientRect()
+
+    if (serviciosRect.top <= 120 && serviciosRect.bottom >= 120) {
+      header.classList.add('text-dark')
+    } else if (contactoRect.top <= 120 && contactoRect.bottom >= 120) {
+      header.classList.add('text-dark')
+    } else {
+      header.classList.remove('text-dark')
+    }
+
+    const currentScroll = window.scrollY
+    if (currentScroll > 50) {
+      header?.classList.add('header-sm')
+      return
+    } else {
+      header?.classList.remove('header-sm')
+    }
+  })
 }
 
 export default scroll

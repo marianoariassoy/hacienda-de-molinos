@@ -1,5 +1,5 @@
 .indicators {
-  bottom: 3rem;
+  bottom: 2rem;
   position: absolute;
   left: 2.5rem;
   z-index: 20;
@@ -8,12 +8,54 @@
   }
   li {
     margin: 0 0.3rem !important;
-    button::before {
-      background: white !important;
-    }
   }
 }
 
 .text-vertical {
   writing-mode: sideways-lr;
+}
+
+.border-bottom-primary {
+  border-bottom: 1px solid $color-primary;
+  padding-bottom: 1rem;
+}
+
+.slider-container {
+  div {
+    height: 100%;
+  }
+}
+
+input,
+textarea {
+  border-color: $color-cuatertiary;
+}
+
+#contacto {
+  button {
+    background-color: $color-tertiary;
+    &:hover {
+      background-color: black;
+    }
+  }
+}
+
+.header-sm {
+  section {
+    padding-top: 1.5rem !important;
+  }
+}
+
+header {
+  section {
+    .logo-header {
+      svg {
+        transition: all 0.3s;
+      }
+    }
+  }
+}
+
+.bg-ruta-del-vino {
+  background-image: url('/images/ruta-del-vino.webp');
 }

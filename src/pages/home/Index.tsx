@@ -8,6 +8,7 @@ import Restaurant from './Restaurant'
 import Servicios from './Servicios'
 import Ubicacion from './Ubicacion'
 import Contacto from './Contacto'
+import { HeadProvider, Title } from 'react-head'
 
 const Index = () => {
   const [location] = useLocation()
@@ -43,6 +44,9 @@ const Index = () => {
       <Restaurant />
       <Ubicacion />
       <Contacto />
+      <HeadProvider>
+        <Title>Hacienda de Molinos</Title>
+      </HeadProvider>
     </Layout>
   )
 }
