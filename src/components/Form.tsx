@@ -25,7 +25,7 @@ const Form = ({ lan = 'ES' }) => {
     formState: { errors }
   } = useForm()
 
-  const onSubmit = (data: Inputs) => {
+  const onSubmit = (data: Inputs | null) => {
     setSending(true)
     const sender = {
       to: 'hola@marianoarias.soy',
