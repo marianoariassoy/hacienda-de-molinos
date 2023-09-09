@@ -1,10 +1,23 @@
-import { Link } from 'wouter'
+import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'wouter'
 import Menu from './Menu'
 import Social from './Social'
 import Languages from './Languages'
 import { Logo } from '../icons/icons'
 
 const Header = () => {
+  const [location] = useLocation()
+  const [isHome, setIsHome] = useState(true)
+
+  useEffect(() => {
+    location === '/historia' ||
+    location === '/ruta-del-vino' ||
+    location === '/beneficios-y-promociones' ||
+    location === '/vivi-molinos'
+      ? setIsHome(false)
+      : setIsHome(true)
+  }, [location])
+
   const OpenMenu = () => {
     document.querySelector('header')?.classList.toggle('text-white')
     document.querySelector('.nav-menu')?.classList.toggle('active')
@@ -24,14 +37,21 @@ const Header = () => {
         <span className='text-sm hidden lg:inline'>MENU</span>
       </div>
       <div className='z-50'>
-        <Link href='/'>
+        {isHome ? (
           <a
+            href='#'
             target='#home'
-            className='hover:opacity-70 transition-all logo-header '
+            className='scroll hover:opacity-70 transition-all logo-header'
           >
             <Logo />
           </a>
-        </Link>
+        ) : (
+          <Link href='/'>
+            <a className='hover:opacity-70 transition-all logo-header '>
+              <Logo />
+            </a>
+          </Link>
+        )}
       </div>
       <div className='flex-grow flex-1'>
         <div className='gap-x-6 items-center justify-end hidden lg:flex'>

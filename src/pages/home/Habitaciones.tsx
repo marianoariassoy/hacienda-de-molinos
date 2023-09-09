@@ -15,7 +15,7 @@ const Habitaciones = () => {
       className='bg-tertiary text-white'
       id='habitaciones'
     >
-      <div className='m-auto max-w-7xl px-6 py-40'>
+      <div className='m-auto max-w-7xl px-6 lg:px-12 py-40'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
           <div className='col'>
             <div className='text-center mb-16'>
@@ -24,7 +24,7 @@ const Habitaciones = () => {
               </h2>
               <h1 className='font-special text-8xl text-primary leading-8'>{textsHabitaciones[lan].title}</h1>
             </div>
-            <div className='flex flex-col gap-y-12'>
+            <div className='flex flex-col gap-y-8'>
               <article>
                 <p className='text-wrap'>
                   Las 18 habitaciones de la Hacienda de Molinos están repartidas en las categorías superiores y
@@ -37,7 +37,7 @@ const Habitaciones = () => {
                 </p>
               </article>
               <article>
-                <h2 className='text-primary font-secondary text-2xl mb-4 border-bottom-primary'>
+                <h2 className='text-primary font-secondary text-xl mb-4 border-bottom-primary'>
                   HABITACIONES ESTÁNDAR
                 </h2>
                 <p className='text-wrap'>
@@ -47,7 +47,7 @@ const Habitaciones = () => {
                 </p>
               </article>
               <article>
-                <h2 className='text-primary font-secondary text-2xl mb-4 border-bottom-primary'>
+                <h2 className='text-primary font-secondary text-xl mb-4 border-bottom-primary'>
                   HABITACIONES SUPERIORES
                 </h2>
                 <p className='text-wrap'>

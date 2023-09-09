@@ -9,7 +9,7 @@ const Contacto = () => {
       className='text-tertiary'
       id='contacto'
     >
-      <div className='m-auto max-w-7xl px-6 py-40 flex flex-col lg:flex-row gap-12'>
+      <div className='m-auto max-w-7xl px-6 lg:px-12 py-40 flex flex-col lg:flex-row gap-12'>
         <div className='col lg:w-[60%]'>
           <h1 className='text-4xl lg:text-5xl font-secondary-semibold mb-12'>
             {lan === 'ES' && 'CONTACTO'}

@@ -20,7 +20,7 @@ const Restaurant = () => {
           <h2 className='font-secondary-semibold text-4xl lg:text-5xl uppercase'>{textsRestaurant[lan].subtitle}</h2>
           <h1 className='font-special text-8xl text-primary leading-8'>{textsRestaurant[lan].title}</h1>
         </div>
-        <div className='text-wrap '>
+        <div className='text-wrap'>
           En Molinos podrá volver a disfrutar las recetas y los sabores de siempre, recetas de campo, elaboradas con
           productos de la región, con la personalidad de la cocina de autor y la autenticidad de las cocineras de la
           Hacienda. En la carta de vinos, seleccionamos las mejores etiquetas de los Valles Calchaquíes.

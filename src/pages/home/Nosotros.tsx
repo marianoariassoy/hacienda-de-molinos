@@ -9,7 +9,7 @@ const Nosotros = () => {
       className='bg-primary text-white'
       id='nosotros'
     >
-      <div className='relative m-auto max-w-6xl px-6 py-14 flex flex-col lg:flex-row items-center gap-8'>
+      <div className='relative m-auto max-w-7xl px-6 lg:px-12 py-14 flex flex-col lg:flex-row items-center gap-8'>
         <div className='absolute left-1/4 top-32 font-special text-8xl leading-10'>
           <div>
             {textsNosotros[lan].title} <span className='block ml-12'> {textsNosotros[lan].subtitle} </span>

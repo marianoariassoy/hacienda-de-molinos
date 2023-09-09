@@ -10,7 +10,7 @@ const Ubicacion = () => {
       className='bg-tertiary text-white'
       id='ubicacion'
     >
-      <div className='m-auto max-w-7xl px-6 py-40 grid grid-cols-1 lg:grid-cols-2 gap-8'>
+      <div className='m-auto max-w-7xl px-6 lg:px-12 py-40 grid grid-cols-1 lg:grid-cols-2 gap-8'>
         <div className='col'>
           <img
             src='/images/ubicacion.svg'
@@ -23,7 +23,9 @@ const Ubicacion = () => {
             <h2 className='font-secondary-semibold text-4xl lg:text-5xl uppercase'>{textsUbicacion[lan].subtitle}</h2>
             <h1 className='font-special text-8xl text-primary leading-8'>{textsUbicacion[lan].title}</h1>
           </div>
-          <hr className='w-full border-b border-white my-12' />
+
+          <hr className='w-full border-b border-white my-8' />
+
           <p className='text-wrap mb-8'>
             La Hacienda de Molinos Hotel se encuentra a orillas del río Calchaquí, en el pueblo de Molinos, al costado
             de la Ruta Nac. 40, en el centro de los Valles Calchaquíes, en la Provincia de Salta, Argentina.

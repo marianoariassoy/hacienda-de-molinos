@@ -20,8 +20,8 @@ const Index = () => {
         className='bg-primary text-white fade-in'
         id='home'
       >
-        <div className='m-auto max-w-7xl px-6 pt-52 pb-32'>
-          <div className='text-center mb-16'>
+        <div className='m-auto max-w-7xl px-6 lg:px-12 pt-52 pb-32'>
+          <div className='text-center mb-12 lg:mb-16'>
             <h2 className='font-secondary-semibold text-4xl lg:text-5xl uppercase'>{textsHistoria[lan].subtitle}</h2>
             <h1 className='font-special text-8xl leading-8'>{textsHistoria[lan].title}</h1>
           </div>

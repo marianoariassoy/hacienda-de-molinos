@@ -28,8 +28,11 @@ const Menu = () => {
   return (
     <section className='h-full w-full text-center grid content-center'>
       <div className='flex flex-col gap-y-12 font-secondary-semibold'>
-        <nav onClick={closeMenu}>
-          <ul className='flex flex-col gap-y-2 text-2xl'>
+        <nav
+          onClick={closeMenu}
+          className='mt-8'
+        >
+          <ul className='flex flex-col text-2xl'>
             {menu.map((item, index) => (
               <li key={index}>
                 {isHome && item.path ? (

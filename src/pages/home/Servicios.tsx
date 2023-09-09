@@ -15,7 +15,7 @@ const Servicios = () => {
       className='text-cuaternary'
       id='servicios'
     >
-      <div className='m-auto max-w-7xl px-6 py-40 flex flex-col lg:flex-row gap-12'>
+      <div className='m-auto max-w-7xl px-6 lg:px-12 py-40 flex flex-col lg:flex-row gap-12'>
         <div className='col lg:w-[40%]'>
           <div className='text-center mb-16'>
             <h2 className='font-secondary-semibold text-4xl lg:text-5xl uppercase'>{textsServicios[lan].subtitle}</h2>

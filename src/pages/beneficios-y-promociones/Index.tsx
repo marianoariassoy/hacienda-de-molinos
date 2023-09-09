@@ -19,15 +19,15 @@ const Index = () => {
         className='text-tertiary fade-in'
         id='home'
       >
-        <div className='m-auto max-w-7xl px-6 pt-52 pb-24'>
-          <h1 className='text-4xl lg:text-5xl font-secondary-semibold mb-12 text-primary w-1/2'>
+        <div className='m-auto max-w-7xl px-6 lg:px-12 pt-52 pb-24'>
+          <h1 className='text-4xl lg:text-5xl font-secondary-semibold mb-8 lg:mb-12 text-primary w-1/2'>
             {lan === 'ES' && 'Benficios y Promociones'}
             {lan === 'EN' && 'Benefits and Promotions'}
             {lan === 'FR' && 'Avantages et promotions'}
             {lan === 'POR' && 'Benefícios e promoções'}
           </h1>
 
-          <article className='flex flex-col lg:flex-row gap-y-8 gap-x-12 mb-12'>
+          <article className='flex flex-col lg:flex-row gap-y-4 gap-x-12 mb-12'>
             <div className='col lg:w-[33%]'>
               <img
                 src='https://images.pexels.com/photos/1955134/pexels-photo-1955134.jpeg?auto=compress&cs=tinysrgb&w=1600'
@@ -47,7 +47,7 @@ const Index = () => {
               </p>
             </div>
           </article>
-          <article className='flex flex-col lg:flex-row gap-y-8 gap-x-12 mb-12'>
+          <article className='flex flex-col lg:flex-row gap-y-4 gap-x-12 mb-12'>
             <div className='col lg:w-[33%]'>
               <img
                 src='https://images.pexels.com/photos/1955134/pexels-photo-1955134.jpeg?auto=compress&cs=tinysrgb&w=1600'
@@ -67,7 +67,7 @@ const Index = () => {
               </p>
             </div>
           </article>
-          <article className='flex flex-col lg:flex-row gap-y-8 gap-x-12 mb-12'>
+          <article className='flex flex-col lg:flex-row gap-y-4 gap-x-12 mb-12'>
             <div className='col lg:w-[33%]'>
               <img
                 src='https://images.pexels.com/photos/1955134/pexels-photo-1955134.jpeg?auto=compress&cs=tinysrgb&w=1600'

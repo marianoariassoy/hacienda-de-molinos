@@ -20,7 +20,7 @@ const Index = () => {
         className='bg-black text-white fade-in bg-ruta-del-vino bg-cover relative'
         id='home'
       >
-        <div className='m-auto max-w-7xl px-6 pb-24 pt-40 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center'>
+        <div className='m-auto max-w-7xl px-6 lg:px-12 pb-24 pt-40 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center'>
           <div className='col'>
             <img
               src='/images/mapa-ruta.svg'
