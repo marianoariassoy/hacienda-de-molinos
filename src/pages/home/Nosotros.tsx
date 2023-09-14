@@ -1,8 +1,13 @@
 import { useDataContext } from '../../context/useDataContext'
 import { textsNosotros } from '../../data/data'
+import useFetch from '../../hooks/useFetch'
 
 const Nosotros = () => {
   const { lan } = useDataContext()
+  const { data, loading } = useFetch(`/textos/${lan}`) as {
+    data: Array<{ id: number; title: string; text: string }> | null
+    loading: boolean
+  }
 
   return (
     <section
@@ -16,7 +21,7 @@ const Nosotros = () => {
           </div>
         </div>
         <div className='col lg:w-[40%] flex items-end gap-x-3'>
-          <div className='text-vertical font-secondary'>{textsNosotros[lan].image}</div>
+          <div className='text-vertical font-secondary'>/ {!loading && data[0].title}</div>
           <div>
             <img
               src='/images/nosotros.webp'
@@ -26,22 +31,7 @@ const Nosotros = () => {
           </div>
         </div>
         <div className='col lg:w-[60%] lg:pt-24'>
-          <p className='text-wrap'>
-            La Hacienda de Molinos es la posta obligada en la vuelta a los Valles Calchaquíes.
-            <br />
-            <br />
-            La antigua casona del S XVIII, que fuera residencia del último gobernador de Salta por mandato del Rey, ha
-            sido restaurada para brindar el confort de un hotel del SXXI, manteniendo la esencia y rasgos de la época
-            colonial.
-            <br />
-            <br />
-            El patio del molle, los gruesos muros de adobe, las rejas de hierro y los techos, construidos con algarrobo
-            y cañizo, son sólo algunos encantos del hotel, que imponen su carácter remontándonos al pasado.
-            <br />
-            <br />
-            Molinos formó parte del Camino del Inca, fue testigo del encuentro de razas, de pueblos, de raíces y de
-            sentidos. Hoy sus callecitas, iluminadas por faroles, acumulan en silencio parte de esa historia.
-          </p>
+          <p className='text-wrap whitespace-pre-wrap'>{!loading && data[0].text}</p>
         </div>
       </div>
     </section>

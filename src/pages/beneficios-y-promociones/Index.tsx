@@ -3,9 +3,15 @@ import Layout from '../../layout/Layout'
 import { useDataContext } from '../../context/useDataContext'
 import { HeadProvider, Title } from 'react-head'
 import WaComponent from '../../components/WaComponent'
+import useFetch from '../../hooks/useFetch'
+import Loader from '../../components/Loader'
 
 const Index = () => {
   const { lan } = useDataContext()
+  const { data, loading } = useFetch(`/beneficios/${lan}`) as {
+    data: Array<{ id: number; title: string; text: string; image: string }> | null
+    loading: boolean
+  }
 
   useEffect(() => {
     const header = document.querySelector('header')
@@ -27,66 +33,28 @@ const Index = () => {
             {lan === 'POR' && 'Benefícios e promoções'}
           </h1>
 
-          <article className='flex flex-col lg:flex-row gap-y-4 gap-x-12 mb-12'>
-            <div className='col lg:w-[33%]'>
-              <img
-                src='https://images.pexels.com/photos/1955134/pexels-photo-1955134.jpeg?auto=compress&cs=tinysrgb&w=1600'
-                alt=''
-                className='w-full h-full object-cover aspect-video'
-              />
-            </div>
-            <div className='col lg:w-[66%]'>
-              <h2 className='font-secondary-semibold text-tertiary mb-4 text-3xl'>Promo 2x1</h2>
-              <p className='text-wrap text-sm'>
-                En Molinos podrá volver a disfrutar las recetas y los sabores de siempre, recetas de campo, elaboradas
-                con productos de la región, con la personalidad de la cocina de autor y la autenticidad de las cocineras
-                de la Hacienda. En la carta de vinos, seleccionamos las mejores etiquetas de los Valles Calchaquíes. La
-                propuesta gastronómica incluye comida regional, platos con ingredientes andinos, recetas clásicas, y la
-                cocina del mundo. Las empanadas y el pan de la Hacienda de Molinos se elaboran en el horno de barro,
-                como solía hacerse en la época colonial.
-              </p>
-            </div>
-          </article>
-          <article className='flex flex-col lg:flex-row gap-y-4 gap-x-12 mb-12'>
-            <div className='col lg:w-[33%]'>
-              <img
-                src='https://images.pexels.com/photos/1955134/pexels-photo-1955134.jpeg?auto=compress&cs=tinysrgb&w=1600'
-                alt=''
-                className='w-full h-full object-cover aspect-video'
-              />
-            </div>
-            <div className='col lg:w-[66%]'>
-              <h2 className='font-secondary-semibold text-tertiary mb-4 text-3xl'>Promo 2x1</h2>
-              <p className='text-wrap text-sm'>
-                En Molinos podrá volver a disfrutar las recetas y los sabores de siempre, recetas de campo, elaboradas
-                con productos de la región, con la personalidad de la cocina de autor y la autenticidad de las cocineras
-                de la Hacienda. En la carta de vinos, seleccionamos las mejores etiquetas de los Valles Calchaquíes. La
-                propuesta gastronómica incluye comida regional, platos con ingredientes andinos, recetas clásicas, y la
-                cocina del mundo. Las empanadas y el pan de la Hacienda de Molinos se elaboran en el horno de barro,
-                como solía hacerse en la época colonial.
-              </p>
-            </div>
-          </article>
-          <article className='flex flex-col lg:flex-row gap-y-4 gap-x-12 mb-12'>
-            <div className='col lg:w-[33%]'>
-              <img
-                src='https://images.pexels.com/photos/1955134/pexels-photo-1955134.jpeg?auto=compress&cs=tinysrgb&w=1600'
-                alt=''
-                className='w-full h-full object-cover aspect-video'
-              />
-            </div>
-            <div className='col lg:w-[66%]'>
-              <h2 className='font-secondary-semibold text-tertiary mb-4 text-3xl'>Promo 2x1</h2>
-              <p className='text-wrap text-sm'>
-                En Molinos podrá volver a disfrutar las recetas y los sabores de siempre, recetas de campo, elaboradas
-                con productos de la región, con la personalidad de la cocina de autor y la autenticidad de las cocineras
-                de la Hacienda. En la carta de vinos, seleccionamos las mejores etiquetas de los Valles Calchaquíes. La
-                propuesta gastronómica incluye comida regional, platos con ingredientes andinos, recetas clásicas, y la
-                cocina del mundo. Las empanadas y el pan de la Hacienda de Molinos se elaboran en el horno de barro,
-                como solía hacerse en la época colonial.
-              </p>
-            </div>
-          </article>
+          {loading ? (
+            <Loader />
+          ) : (
+            data.map(({ id, title, text, image }) => (
+              <article
+                className='flex flex-col lg:flex-row gap-y-4 gap-x-12 mb-12'
+                key={id}
+              >
+                <div className='col lg:w-[33%]'>
+                  <img
+                    src={image}
+                    alt={title}
+                    className='w-full h-full object-cover aspect-video'
+                  />
+                </div>
+                <div className='col lg:w-[66%]'>
+                  <h2 className='font-secondary-semibold text-tertiary mb-4 text-3xl'>{title}</h2>
+                  <p className='text-wrap text-sm whitespace-pre-wrap'>{text}</p>
+                </div>
+              </article>
+            ))
+          )}
         </div>
 
         <WaComponent />

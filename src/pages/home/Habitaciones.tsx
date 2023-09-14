@@ -2,10 +2,15 @@ import { useDataContext } from '../../context/useDataContext'
 import { textsHabitaciones } from '../../data/data'
 import useFetch from '../../hooks/useFetch'
 import Slider from '../../components/Slider'
+import Loader from '../../components/Loader'
 
 const Habitaciones = () => {
   const { lan } = useDataContext()
-  const { data, loading } = useFetch(`/home`) as {
+  const { data, loading } = useFetch(`/habitaciones/${lan}`) as {
+    data: Array<{ id: number; title: string; text: string }> | null
+    loading: boolean
+  }
+  const { data: dataImages, loading: loadingImages } = useFetch(`/fotos-habitaciones`) as {
     data: Array<{ id: number; image: string }> | null
     loading: boolean
   }
@@ -25,42 +30,23 @@ const Habitaciones = () => {
               <h1 className='font-special text-8xl text-primary leading-8'>{textsHabitaciones[lan].title}</h1>
             </div>
             <div className='flex flex-col gap-y-8'>
-              <article>
-                <p className='text-wrap'>
-                  Las 18 habitaciones de la Hacienda de Molinos están repartidas en las categorías superiores y
-                  estándar. Las mismas cuentan con calefacción y baño en suite, equipado con bañera, ducha y secador de
-                  pelo.
-                  <br />
-                  <br />
-                  Al igual que los dormitorios del SXVIII, las habitaciones del hotel son amplias, los techos son de
-                  caña y los tirantes, apenas canteados, están a la vista.
-                </p>
-              </article>
-              <article>
-                <h2 className='text-primary font-secondary text-xl mb-4 border-bottom-primary'>
-                  HABITACIONES ESTÁNDAR
-                </h2>
-                <p className='text-wrap'>
-                  Las habitaciones estándar están distribuidas en el patio del molle y en el segundo solar de la
-                  Hacienda. Desde la ventana, se puede disfrutar el río Calchaquí y los cerros pardos rojizos que se
-                  imponen en el horizonte.
-                </p>
-              </article>
-              <article>
-                <h2 className='text-primary font-secondary text-xl mb-4 border-bottom-primary'>
-                  HABITACIONES SUPERIORES
-                </h2>
-                <p className='text-wrap'>
-                  En las superiores, la rusticidad de los materiales contrasta con los detalles de diseño. El lujo está
-                  dado por el buen gusto de sus muebles, elaborados por artesanos de la región, exclusivamente para el
-                  hotel.
-                </p>
-              </article>
+              {loading ? (
+                <Loader />
+              ) : (
+                data.map(({ id, title, text }) => (
+                  <article key={id}>
+                    {title && (
+                      <h2 className='text-primary font-secondary text-xl mb-4 border-bottom-primary'>{title}</h2>
+                    )}
+                    <p className='text-wrap whitespace-pre-wrap'>{text}</p>
+                  </article>
+                ))
+              )}
             </div>
           </div>
           <div className='col lg:pl-12'>
             <div className='aspect-square lg:aspect-[4/5] slider-container relative'>
-              {!loading && <Slider data={data} />}
+              {loadingImages ? <Loader /> : <Slider data={dataImages} />}
             </div>
           </div>
         </div>

@@ -170,23 +170,19 @@ interface Texts {
 export const textsNosotros: Texts = {
   ES: {
     title: 'pasado',
-    subtitle: 'y presente',
-    image: '/ En medio de los cerros Salteño'
+    subtitle: 'y presente'
   },
   EN: {
     title: 'past',
-    subtitle: 'and future',
-    image: '/ In the middle of the Salteño hills'
+    subtitle: 'and future'
   },
   FR: {
     title: 'passé',
-    subtitle: 'et présent',
-    image: '/ Au milieu des collines de Salteño'
+    subtitle: 'et présent'
   },
   POR: {
     title: 'passado',
-    subtitle: 'e presente',
-    image: '/ No meio das colinas de Salteño'
+    subtitle: 'e presente'
   }
 }
 
@@ -235,23 +231,19 @@ export const textsServicios: Texts = {
 export const textsRestaurant: Texts = {
   ES: {
     title: 'restaurant',
-    subtitle: 'nuestro',
-    image: '/ Sabores que cautivan'
+    subtitle: 'nuestro'
   },
   EN: {
     title: 'restaurant',
-    subtitle: 'our',
-    image: '/ Tastes that captivate'
+    subtitle: 'our'
   },
   FR: {
     title: 'restaurant',
-    subtitle: 'nous',
-    image: '/ Savoirs qui captivent'
+    subtitle: 'nous'
   },
   POR: {
     title: 'restaurant',
-    subtitle: 'nossos',
-    image: '/ Sabor que cautiva'
+    subtitle: 'nossos'
   }
 }
 

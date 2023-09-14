@@ -4,10 +4,15 @@ import { useDataContext } from '../../context/useDataContext'
 import { HeadProvider, Title } from 'react-head'
 import WaComponent from '../../components/WaComponent'
 import { textsVivi } from '../../data/data'
+import useFetch from '../../hooks/useFetch'
+import Loader from '../../components/Loader'
 
 const Index = () => {
   const { lan } = useDataContext()
-
+  const { data, loading } = useFetch(`/vivi/${lan}`) as {
+    data: Array<{ id: number; title: string; text: string; image: string }> | null
+    loading: boolean
+  }
   useEffect(() => {
     const header = document.querySelector('header')
     header?.classList.add('text-home')
@@ -30,43 +35,30 @@ const Index = () => {
             </div>
           </div>
           <div className='col lg:w-[66%]'>
-            <article className='flex flex-col lg:flex-row gap-y-4 gap-x-12 mb-12'>
-              <div className='col lg:w-[33%]'>
-                <img
-                  src='https://images.pexels.com/photos/1955134/pexels-photo-1955134.jpeg?auto=compress&cs=tinysrgb&w=1600'
-                  alt=''
-                  className='w-full h-full object-cover aspect-video lg:aspect-square'
-                />
-              </div>
-              <div className='col lg:w-[66%]'>
-                <h2 className='font-secondary-semibold mb-4 text-3xl'>Cabalgatas</h2>
-                <p className='text-wrap text-sm'>
-                  Experiencia unica, paseo a lugares unicos con vistas panoramicas, contacto con la naturaleza, la
-                  historia y los habitantes del lugar. <br /> <br />
-                  Guía: Jesus Liendro +54 (0387) 5 11 4597 | Instagram: @molinoscabalgatas
-                </p>
-              </div>
-            </article>
-            <article className='flex flex-col lg:flex-row gap-y-4 gap-x-12 mb-12'>
-              <div className='col lg:w-[33%]'>
-                <img
-                  src='https://images.pexels.com/photos/1955134/pexels-photo-1955134.jpeg?auto=compress&cs=tinysrgb&w=1600'
-                  alt=''
-                  className='w-full h-full object-cover aspect-video lg:aspect-square'
-                />
-              </div>
-              <div className='col lg:w-[66%]'>
-                <h2 className='font-secondary-semibold mb-4 text-3xl'>Cabalgatas</h2>
-                <p className='text-wrap text-sm'>
-                  Experiencia unica, paseo a lugares unicos con vistas panoramicas, contacto con la naturaleza, la
-                  historia y los habitantes del lugar. <br /> <br />
-                  Guía: Jesus Liendro +54 (0387) 5 11 4597 | Instagram: @molinoscabalgatas
-                </p>
-              </div>
-            </article>
+            {loading ? (
+              <Loader />
+            ) : (
+              data.map(({ id, title, text, image }) => (
+                <article
+                  className='flex flex-col lg:flex-row gap-y-4 gap-x-12 mb-12'
+                  key={id}
+                >
+                  <div className='col lg:w-[33%]'>
+                    <img
+                      src={image}
+                      alt={title}
+                      className='w-full h-full object-cover aspect-video lg:aspect-square'
+                    />
+                  </div>
+                  <div className='col lg:w-[66%]'>
+                    <h2 className='font-secondary-semibold mb-4 text-3xl'>{title}</h2>
+                    <p className='text-wrap text-sm whitespace-pre-wrap'>{text}</p>
+                  </div>
+                </article>
+              ))
+            )}
           </div>
         </div>
-
         <div className='text-primary'>
           <WaComponent />
         </div>
