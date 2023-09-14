@@ -10,7 +10,7 @@ const Contacto = () => {
       id='contacto'
     >
       <div className='m-auto max-w-7xl px-6 lg:px-12 py-40 flex flex-col lg:flex-row gap-12'>
-        <div className='col lg:w-[60%]'>
+        <div className='col lg:w-[60%] animation-fade-in'>
           <h1 className='text-4xl lg:text-5xl font-secondary-semibold mb-12'>
             {lan === 'ES' && 'CONTACTO'}
             {lan === 'EN' && 'CONTACT'}
@@ -23,6 +23,7 @@ const Contacto = () => {
           <img
             src='/images/contacto.webp'
             alt='Imagen de la fachada del edificio'
+            className='animation-scale'
           />
           {lan === 'ES' && (
             <div className='flex flex-col mt-12'>

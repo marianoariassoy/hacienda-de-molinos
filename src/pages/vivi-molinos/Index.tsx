@@ -26,7 +26,7 @@ const Index = () => {
         id='home'
       >
         <div className='m-auto max-w-7xl px-6 lg:px-12 pt-56 lg:pt-64 pb-24 flex flex-col lg:flex-row gap-12 items-center'>
-          <div className='col lg:w-[33%]'>
+          <div className='col lg:w-[33%] fade-in-delay'>
             <div className='text-center'>
               <h2 className='font-secondary-semibold text-primary text-4xl lg:text-5xl uppercase'>
                 {textsVivi[lan].subtitle}
@@ -40,7 +40,7 @@ const Index = () => {
             ) : (
               data.map(({ id, title, text, image }) => (
                 <article
-                  className='flex flex-col lg:flex-row gap-y-4 gap-x-12 mb-12'
+                  className='flex flex-col lg:flex-row gap-y-4 gap-x-12 mb-12 fade-in-delay-2'
                   key={id}
                 >
                   <div className='col lg:w-[33%]'>

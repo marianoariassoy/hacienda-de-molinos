@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-const apiUrl = 'http://localhost/sites/hacienda-backend/api'
+const apiUrl = 'https://marianoarias.soy/sites/hacienda/backend/api'
 import axios from 'axios'
 
 type Data = string

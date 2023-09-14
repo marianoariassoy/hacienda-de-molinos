@@ -31,10 +31,10 @@ const Index = () => {
             <h1 className='font-special text-8xl leading-8'>{textsHistoria[lan].title}</h1>
           </div>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
-            <div className='col'>
+            <div className='col fade-in-delay'>
               <p className='text-wrap whitespace-pre-wrap'>{!loading && data[3].text}</p>
             </div>
-            <div className='col'>
+            <div className='col fade-in-delay-2'>
               <div className='flex justify-end gap-x-4'>
                 <img
                   src='/images/historia.webp'

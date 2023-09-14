@@ -20,7 +20,7 @@ const Restaurant = () => {
       className='text-white h-screen relative'
       id='restaurant'
     >
-      <div className='absolute z-20 bottom-24 right-0 max-w-xl px-6 lg:px-12'>
+      <div className='absolute z-20 bottom-24 right-0 max-w-xl px-6 lg:px-12 animation-fade-in'>
         <div className='text-center mb-8'>
           <h2 className='font-secondary-semibold text-4xl lg:text-5xl uppercase'>{textsRestaurant[lan].subtitle}</h2>
           <h1 className='font-special text-8xl text-primary leading-8'>{textsRestaurant[lan].title}</h1>

@@ -15,12 +15,12 @@ const Nosotros = () => {
       id='nosotros'
     >
       <div className='relative m-auto max-w-7xl px-6 lg:px-12 py-14 flex flex-col lg:flex-row items-center gap-8'>
-        <div className='absolute left-1/4 top-32 font-special text-8xl leading-10'>
+        <div className='absolute left-1/4 top-32 font-special text-8xl leading-10 z-40 animation-scale'>
           <div>
             {textsNosotros[lan].title} <span className='block ml-12'> {textsNosotros[lan].subtitle} </span>
           </div>
         </div>
-        <div className='col lg:w-[40%] flex items-end gap-x-3'>
+        <div className='col lg:w-[40%] flex items-end gap-x-3 animation-scale'>
           <div className='text-vertical font-secondary'>/ {!loading && data[0].title}</div>
           <div>
             <img
@@ -30,7 +30,7 @@ const Nosotros = () => {
             />
           </div>
         </div>
-        <div className='col lg:w-[60%] lg:pt-24'>
+        <div className='col lg:w-[60%] lg:pt-24 animation-fade-in'>
           <p className='text-wrap whitespace-pre-wrap'>{!loading && data[0].text}</p>
         </div>
       </div>

@@ -16,14 +16,14 @@ const Ubicacion = () => {
       id='ubicacion'
     >
       <div className='m-auto max-w-7xl px-6 lg:px-12 py-40 grid grid-cols-1 lg:grid-cols-2 gap-8'>
-        <div className='col'>
+        <div className='col animation-scale'>
           <img
             src='/images/ubicacion.svg'
             alt='Mapa de la ubicación de la Hacienda de Molinos'
             className='w-full'
           />
         </div>
-        <div className='col lg:pl-12'>
+        <div className='col lg:pl-12 animation-fade-in'>
           <div className='text-center'>
             <h2 className='font-secondary-semibold text-4xl lg:text-5xl uppercase'>{textsUbicacion[lan].subtitle}</h2>
             <h1 className='font-special text-8xl text-primary leading-8'>{textsUbicacion[lan].title}</h1>

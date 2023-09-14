@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <section className='fixed w-full px-6 lg:px-12 py-12 flex items-start z-50 transition-all font-secondary'>
-      <div className='flex items-center gap-x-4 flex-grow flex-1'>
+      <div className='flex items-center gap-x-4 flex-grow flex-1 fade-in-delay-2'>
         <div
           className='nav-menu z-50'
           onClick={OpenMenu}
@@ -36,7 +36,7 @@ const Header = () => {
         </div>
         <span className='text-sm hidden lg:inline'>MENU</span>
       </div>
-      <div className='z-50'>
+      <div className='z-50 scale'>
         {isHome ? (
           <a
             href='#'
@@ -53,7 +53,7 @@ const Header = () => {
           </Link>
         )}
       </div>
-      <div className='flex-grow flex-1'>
+      <div className='flex-grow flex-1 fade-in-delay-2'>
         <div className='gap-x-6 items-center justify-end hidden lg:flex'>
           <Languages />
           <Social />

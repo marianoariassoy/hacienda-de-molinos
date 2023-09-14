@@ -22,7 +22,7 @@ const Habitaciones = () => {
     >
       <div className='m-auto max-w-7xl px-6 lg:px-12 py-40'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
-          <div className='col'>
+          <div className='col animation-fade-in'>
             <div className='text-center mb-16'>
               <h2 className='font-secondary-semibold text-4xl lg:text-5xl uppercase'>
                 {textsHabitaciones[lan].subtitle}
@@ -44,7 +44,7 @@ const Habitaciones = () => {
               )}
             </div>
           </div>
-          <div className='col lg:pl-12'>
+          <div className='col lg:pl-12  animation-scale'>
             <div className='aspect-square lg:aspect-[4/5] slider-container relative'>
               {loadingImages ? <Loader /> : <Slider data={dataImages} />}
             </div>

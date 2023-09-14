@@ -19,10 +19,10 @@ const Home = () => {
       <div className='absolute w-full h-full bg-black bg-opacity-40 z-10'></div>
       <div className='slider-container h-full'>{!loading && <Slider data={data} />}</div>
 
-      <div className='absolute w-full bottom-8 z-10 flex justify-center'>
+      <div className='absolute w-full bottom-8 z-10 flex justify-center fade-in-down'>
         <a
           target='#nosotros'
-          className='flex flex-col items-center gap-y-1 scroll hover:text-black transition-all text-white animate-pulse cursor-pointer'
+          className='flex flex-col items-center gap-y-1 scroll hover:text-black transition-all text-white cursor-pointer'
         >
           <hr className='h-6 border-current border-l' />
           <span className='font-secondary'>

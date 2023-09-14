@@ -26,7 +26,7 @@ const Index = () => {
         id='home'
       >
         <div className='m-auto max-w-7xl px-6 lg:px-12 pt-52 pb-24'>
-          <h1 className='text-4xl lg:text-5xl font-secondary-semibold mb-8 lg:mb-12 text-primary w-1/2'>
+          <h1 className='text-4xl lg:text-5xl font-secondary-semibold mb-8 lg:mb-12 text-primary w-1/2 fade-in-delay'>
             {lan === 'ES' && 'Benficios y Promociones'}
             {lan === 'EN' && 'Benefits and Promotions'}
             {lan === 'FR' && 'Avantages et promotions'}
@@ -38,7 +38,7 @@ const Index = () => {
           ) : (
             data.map(({ id, title, text, image }) => (
               <article
-                className='flex flex-col lg:flex-row gap-y-4 gap-x-12 mb-12'
+                className='flex flex-col lg:flex-row gap-y-4 gap-x-12 mb-12 fade-in-delay-2'
                 key={id}
               >
                 <div className='col lg:w-[33%]'>
