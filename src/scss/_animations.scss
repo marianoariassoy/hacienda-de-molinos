@@ -1,19 +1,30 @@
+// .animation-fade-in {
+//   view-timeline-name: --image;
+//   view-timeline-axis: block;
+//   animation-timeline: --image;
+//   animation-name: show;
+//   animation-range: entry 25% cover 50%;
+//   animation-fill-mode: both;
+// }
+// .animation-scale {
+//   view-timeline-name: --image;
+//   view-timeline-axis: block;
+//   animation-timeline: --image;
+//   animation-name: scale;
+//   animation-range: entry 25% cover 50%;
+//   animation-fill-mode: both;
+// }
+
 .animation-fade-in {
-  view-timeline-name: --image;
-  view-timeline-axis: block;
-  animation-timeline: --image;
-  animation-name: show;
-  animation-range: entry 25% cover 50%;
-  animation-fill-mode: both;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
-.animation-scale {
-  view-timeline-name: --image;
-  view-timeline-axis: block;
-  animation-timeline: --image;
-  animation-name: scale;
-  animation-range: entry 25% cover 50%;
-  animation-fill-mode: both;
+.animation-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
+
 .scale {
   animation: scale ease 0.5s;
 }

@@ -3,6 +3,7 @@ import { textsServicios } from '../../data/data'
 import useFetch from '../../hooks/useFetch'
 import Slider from '../../components/Slider'
 import Loader from '../../components/Loader'
+import { useInView } from 'react-intersection-observer'
 
 const Servicios = () => {
   const { lan } = useDataContext()
@@ -14,6 +15,14 @@ const Servicios = () => {
     data: Array<{ id: number; image: string }> | null
     loading: boolean
   }
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.5
+  })
+  const [ref2, inView2] = useInView({
+    triggerOnce: false,
+    threshold: 0.3
+  })
 
   return (
     <section
@@ -21,7 +30,10 @@ const Servicios = () => {
       id='servicios'
     >
       <div className='m-auto max-w-7xl px-6 lg:px-12 py-40 flex flex-col lg:flex-row gap-12'>
-        <div className='col lg:w-[40%] animation-fade-in'>
+        <div
+          className={`col lg:w-[40%] animation-fade-in ${inView ? 'visible' : ''}`}
+          ref={ref}
+        >
           <div className='text-center mb-16'>
             <h2 className='font-secondary-semibold text-4xl lg:text-5xl uppercase'>{textsServicios[lan].subtitle}</h2>
             <h1 className='font-special text-8xl text-primary leading-8'>{textsServicios[lan].title}</h1>
@@ -44,7 +56,10 @@ const Servicios = () => {
             )}
           </div>
         </div>
-        <div className='col lg:w-[60%] relative animation-scale'>
+        <div
+          className={`col lg:w-[60%] relative animation-fade-in ${inView2 ? 'visible' : ''}`}
+          ref={ref2}
+        >
           <div className='absolute z-30 right-0 top-1/3 font-special text-[11rem] text-white'>molle</div>
           <div className='aspect-square slider-container relative '>
             {loadingImages ? <Loader /> : <Slider data={dataImages} />}

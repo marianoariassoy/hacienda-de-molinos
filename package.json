@@ -15,6 +15,7 @@
     "react-dom": "^18.2.0",
     "react-head": "^3.4.2",
     "react-hook-form": "^7.46.1",
+    "react-intersection-observer": "^9.5.2",
     "react-slideshow-image": "^4.2.1",
     "react-spinners": "^0.13.8",
     "wouter": "^2.11.0"

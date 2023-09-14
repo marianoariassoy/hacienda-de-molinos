@@ -3,6 +3,7 @@ import { textsHabitaciones } from '../../data/data'
 import useFetch from '../../hooks/useFetch'
 import Slider from '../../components/Slider'
 import Loader from '../../components/Loader'
+import { useInView } from 'react-intersection-observer'
 
 const Habitaciones = () => {
   const { lan } = useDataContext()
@@ -14,6 +15,14 @@ const Habitaciones = () => {
     data: Array<{ id: number; image: string }> | null
     loading: boolean
   }
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.5
+  })
+  const [ref2, inView2] = useInView({
+    triggerOnce: false,
+    threshold: 0.3
+  })
 
   return (
     <section
@@ -22,7 +31,10 @@ const Habitaciones = () => {
     >
       <div className='m-auto max-w-7xl px-6 lg:px-12 py-40'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
-          <div className='col animation-fade-in'>
+          <div
+            className={`col animation-fade-in ${inView2 ? 'visible' : ''}`}
+            ref={ref2}
+          >
             <div className='text-center mb-16'>
               <h2 className='font-secondary-semibold text-4xl lg:text-5xl uppercase'>
                 {textsHabitaciones[lan].subtitle}
@@ -44,7 +56,10 @@ const Habitaciones = () => {
               )}
             </div>
           </div>
-          <div className='col lg:pl-12  animation-scale'>
+          <div
+            className={`col lg:pl-12 animation-fade-in ${inView ? 'visible' : ''}`}
+            ref={ref}
+          >
             <div className='aspect-square lg:aspect-[4/5] slider-container relative'>
               {loadingImages ? <Loader /> : <Slider data={dataImages} />}
             </div>

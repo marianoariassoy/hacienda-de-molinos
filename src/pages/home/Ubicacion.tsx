@@ -2,6 +2,7 @@ import { useDataContext } from '../../context/useDataContext'
 import { textsUbicacion } from '../../data/data'
 import { Link } from 'wouter'
 import useFetch from '../../hooks/useFetch'
+import { useInView } from 'react-intersection-observer'
 
 const Ubicacion = () => {
   const { lan } = useDataContext()
@@ -9,6 +10,14 @@ const Ubicacion = () => {
     data: Array<{ id: number; title: string; text: string }> | null
     loading: boolean
   }
+  const [ref, inView] = useInView({
+    triggerOnce: false,
+    threshold: 0.6
+  })
+  const [ref2, inView2] = useInView({
+    triggerOnce: false,
+    threshold: 0.3
+  })
 
   return (
     <section
@@ -16,14 +25,20 @@ const Ubicacion = () => {
       id='ubicacion'
     >
       <div className='m-auto max-w-7xl px-6 lg:px-12 py-40 grid grid-cols-1 lg:grid-cols-2 gap-8'>
-        <div className='col animation-scale'>
+        <div
+          className={`col animation-fade-in ${inView2 ? 'visible' : ''}`}
+          ref={ref2}
+        >
           <img
             src='/images/ubicacion.svg'
             alt='Mapa de la ubicación de la Hacienda de Molinos'
             className='w-full'
           />
         </div>
-        <div className='col lg:pl-12 animation-fade-in'>
+        <div
+          className={`col lg:pl-12 animation-fade-in ${inView ? 'visible' : ''}`}
+          ref={ref}
+        >
           <div className='text-center'>
             <h2 className='font-secondary-semibold text-4xl lg:text-5xl uppercase'>{textsUbicacion[lan].subtitle}</h2>
             <h1 className='font-special text-8xl text-primary leading-8'>{textsUbicacion[lan].title}</h1>
