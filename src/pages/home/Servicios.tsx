@@ -60,7 +60,12 @@ const Servicios = () => {
           className={`col lg:w-[60%] relative animation-fade-in ${inView2 ? 'visible' : ''}`}
           ref={ref2}
         >
-          <div className='absolute z-30 right-0 top-1/3 font-special text-[11rem] text-white'>molle</div>
+          <div className='absolute z-30 right-0 top-1/3'>
+            {lan === 'ES' && <img src='/images/title-momentos.svg' />}
+            {lan === 'EN' && <h1 className='font-special text-9xl text-white'>moments</h1>}
+            {lan === 'FR' && <h1 className='font-special text-9xl text-white'>moments</h1>}
+            {lan === 'POR' && <img src='/images/title-momentos.svg' />}
+          </div>
           <div className='aspect-square slider-container relative '>
             {loadingImages ? <Loader /> : <Slider data={dataImages} />}
           </div>

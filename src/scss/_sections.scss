@@ -43,7 +43,14 @@ textarea {
 
 .header-sm {
   section {
-    padding-top: 1.5rem !important;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background-color: $color-tertiary !important;
+    .logo-header {
+      svg {
+        height: 60px;
+      }
+    }
   }
 }
 

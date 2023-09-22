@@ -25,10 +25,10 @@ const Header = () => {
   }
 
   return (
-    <section className='fixed w-full px-6 lg:px-12 py-12 flex items-start z-50 transition-all font-secondary'>
-      <div className='flex items-center gap-x-4 flex-grow flex-1 fade-in-delay-2'>
+    <section className='fixed w-full px-6 lg:px-12 py-12 flex items-center z-50 transition-all font-secondary'>
+      <div className='flex items-center gap-x-4 flex-grow flex-1 fade-in-delay-2 z-50'>
         <div
-          className='nav-menu z-50'
+          className='nav-menu'
           onClick={OpenMenu}
         >
           <span></span>
@@ -47,13 +47,13 @@ const Header = () => {
           </a>
         ) : (
           <Link href='/'>
-            <a className='hover:opacity-70 transition-all logo-header '>
+            <a className='hover:opacity-70 transition-all logo-header'>
               <Logo />
             </a>
           </Link>
         )}
       </div>
-      <div className='flex-grow flex-1 fade-in-delay-2'>
+      <div className='flex-grow flex-1 fade-in-delay-2 z-50'>
         <div className='gap-x-6 items-center justify-end hidden lg:flex'>
           <Languages />
           <Social />

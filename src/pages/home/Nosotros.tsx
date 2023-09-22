@@ -1,10 +1,11 @@
 import { useDataContext } from '../../context/useDataContext'
-import { textsNosotros } from '../../data/data'
+
 import useFetch from '../../hooks/useFetch'
 import { useInView } from 'react-intersection-observer'
 
 const Nosotros = () => {
   const { lan } = useDataContext()
+
   const { data, loading } = useFetch(`/textos/${lan}`) as {
     data: Array<{ id: number; title: string; text: string }> | null
     loading: boolean
@@ -24,12 +25,15 @@ const Nosotros = () => {
       id='nosotros'
     >
       <div className='relative m-auto max-w-7xl px-6 lg:px-12 py-14 flex flex-col lg:flex-row items-center gap-8'>
-        <div className='absolute left-1/4 top-32 font-special text-8xl leading-10 z-40 animation-scale'>
+        <div className='absolute left-1/4 top-28 font-special text-8xl leading-10 z-40 animation-scale'>
           <div
             className={`animation-fade-in ${inView2 ? 'visible' : ''}`}
             ref={ref2}
           >
-            {textsNosotros[lan].title} <span className='block ml-12'> {textsNosotros[lan].subtitle} </span>
+            {lan === 'ES' && <img src='/images/title1-es.svg' />}
+            {lan === 'EN' && <img src='/images/title1-en.svg' />}
+            {lan === 'FR' && <img src='/images/title1-fr.svg' />}
+            {lan === 'POR' && <img src='/images/title1-por.svg' />}
           </div>
         </div>
         <div

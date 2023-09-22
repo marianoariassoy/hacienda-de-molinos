@@ -14,23 +14,23 @@ const scroll = () => {
     })
   }
 
-  const servicios = document.querySelector('#servicios') as HTMLElement
-  const contacto = document.querySelector('#contacto') as HTMLElement
+  // const servicios = document.querySelector('#servicios') as HTMLElement
+  // const contacto = document.querySelector('#contacto') as HTMLElement
   const header = document.querySelector('header') as HTMLElement
 
   window.addEventListener('scroll', () => {
-    if (servicios === null || contacto === null) return
+    // if (servicios === null || contacto === null) return
 
-    const serviciosRect = servicios.getBoundingClientRect()
-    const contactoRect = contacto.getBoundingClientRect()
+    // const serviciosRect = servicios.getBoundingClientRect()
+    // const contactoRect = contacto.getBoundingClientRect()
 
-    if (serviciosRect.top <= 120 && serviciosRect.bottom >= 120) {
-      header.classList.add('text-dark')
-    } else if (contactoRect.top <= 120 && contactoRect.bottom >= 120) {
-      header.classList.add('text-dark')
-    } else {
-      header.classList.remove('text-dark')
-    }
+    // if (serviciosRect.top <= 120 && serviciosRect.bottom >= 120) {
+    //   header.classList.add('text-dark')
+    // } else if (contactoRect.top <= 120 && contactoRect.bottom >= 120) {
+    //   header.classList.add('text-dark')
+    // } else {
+    //   header.classList.remove('text-dark')
+    // }
 
     const currentScroll = window.scrollY
     if (currentScroll > 50) {

@@ -35,11 +35,20 @@ const Habitaciones = () => {
             className={`col animation-fade-in ${inView2 ? 'visible' : ''}`}
             ref={ref2}
           >
-            <div className='text-center mb-16'>
+            <div className='text-center mb-2'>
               <h2 className='font-secondary-semibold text-4xl lg:text-5xl uppercase'>
                 {textsHabitaciones[lan].subtitle}
               </h2>
-              <h1 className='font-special text-8xl text-primary leading-8'>{textsHabitaciones[lan].title}</h1>
+              <div className='flex justify-center'>
+                {lan === 'FR' ? (
+                  <img
+                    src='/images/title-habitaciones-fr.svg'
+                    className='mb-2'
+                  />
+                ) : (
+                  <h1 className='font-special text-8xl text-primary'>{textsHabitaciones[lan].title}</h1>
+                )}
+              </div>
             </div>
             <div className='flex flex-col gap-y-8'>
               {loading ? (

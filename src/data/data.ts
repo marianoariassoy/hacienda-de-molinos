@@ -39,30 +39,30 @@ export const menu = [
     path: '#ubicacion',
     url: '/ubicacion'
   },
-  {
-    title: 'Ruta del vino',
-    title_en: 'Wine Route',
-    title_fr: 'Route du vin',
-    title_por: 'Rota do Vinho',
-    path: '',
-    url: '/ruta-del-vino'
-  },
-  {
-    title: 'Beneficios y Promociones',
-    title_en: 'Benefits and Promotions',
-    title_fr: 'Bénéfices et promotions',
-    title_por: 'Benefícios e promoções',
-    path: '',
-    url: '/beneficios-y-promociones'
-  },
-  {
-    title: 'Viví Molinos',
-    title_en: 'Live Molinos',
-    title_fr: 'Vivimos Molinos',
-    title_por: 'Vivimos Molinos',
-    path: '',
-    url: '/vivi-molinos'
-  },
+  // {
+  //   title: 'Ruta del vino',
+  //   title_en: 'Wine Route',
+  //   title_fr: 'Route du vin',
+  //   title_por: 'Rota do Vinho',
+  //   path: '',
+  //   url: '/ruta-del-vino'
+  // },
+  // {
+  //   title: 'Beneficios y Promociones',
+  //   title_en: 'Benefits and Promotions',
+  //   title_fr: 'Bénéfices et promotions',
+  //   title_por: 'Benefícios e promoções',
+  //   path: '',
+  //   url: '/beneficios-y-promociones'
+  // },
+  // {
+  //   title: 'Viví Molinos',
+  //   title_en: 'Live Molinos',
+  //   title_fr: 'Vivimos Molinos',
+  //   title_por: 'Vivimos Molinos',
+  //   path: '',
+  //   url: '/vivi-molinos'
+  // },
   {
     title: 'Contacto',
     title_en: 'Contact',

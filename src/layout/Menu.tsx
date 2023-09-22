@@ -30,9 +30,9 @@ const Menu = () => {
       <div className='flex flex-col gap-y-12 font-secondary-semibold'>
         <nav
           onClick={closeMenu}
-          className='mt-8'
+          className='mt-12'
         >
-          <ul className='flex flex-col text-2xl'>
+          <ul className='flex flex-col text-3xl'>
             {menu.map((item, index) => (
               <li key={index}>
                 {isHome && item.path ? (
