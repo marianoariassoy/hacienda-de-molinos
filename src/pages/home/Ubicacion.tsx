@@ -3,6 +3,9 @@ import { useDataContext } from '../../context/useDataContext'
 import { textsUbicacion, textsRuta } from '../../data/data'
 import useFetch from '../../hooks/useFetch'
 import { useInView } from 'react-intersection-observer'
+import Lottie from 'lottie-react'
+import mapa from '../../assets/mapa.json'
+import ruta from '../../assets/rutadelvino.json'
 
 const Ubicacion = () => {
   const { lan } = useDataContext()
@@ -22,6 +25,10 @@ const Ubicacion = () => {
     threshold: 0.3
   })
 
+  const style = {
+    width: '100%'
+  }
+
   return (
     <>
       <section
@@ -33,10 +40,9 @@ const Ubicacion = () => {
             className={`col animation-fade-in ${inView2 ? 'visible' : ''}`}
             ref={ref2}
           >
-            <img
-              src='/images/ubicacion.svg'
-              alt='Mapa de la ubicación de la Hacienda de Molinos'
-              className='w-full'
+            <Lottie
+              animationData={mapa}
+              style={style}
             />
           </div>
           <div
@@ -95,10 +101,9 @@ const Ubicacion = () => {
       >
         <div className='m-auto max-w-7xl px-6 lg:px-12 pb-24 pt-40 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center'>
           <div className='col fade-in-delay-2'>
-            <img
-              src='/images/mapa-ruta.svg'
-              alt='Mapa de la ruta del vino'
-              className='w-full'
+            <Lottie
+              animationData={ruta}
+              style={style}
             />
           </div>
           <div className='col lg:pl-12 fade-in-delay'>

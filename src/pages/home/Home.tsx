@@ -11,13 +11,27 @@ const Home = () => {
     loading: boolean
   }
 
+  const windowWidth = window.innerWidth
+
   return (
     <section
       className='relative h-screen overflow-hidden'
       id='home'
     >
       <div className='absolute w-full h-full bg-black bg-opacity-40 z-10'></div>
-      <div className='slider-container h-full'>{!loading && <Slider data={data} />}</div>
+
+      {windowWidth < 768 ? (
+        <video
+          src='http://haciendademolinos.com.ar/backend/videos/video.mp4'
+          autoPlay
+          muted
+          loop
+          className='w-full h-screen object-cover'
+          typeof='video/mp4'
+        ></video>
+      ) : (
+        <div className='slider-container h-full'>{!loading && <Slider data={data} />}</div>
+      )}
 
       <div className='absolute w-full bottom-8 z-10 flex justify-center fade-in-down'>
         <a

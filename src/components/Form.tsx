@@ -28,13 +28,13 @@ const Form = ({ lan = 'ES' }) => {
   const onSubmit = (data: Inputs) => {
     setSending(true)
     const sender = {
-      to: 'hola@marianoarias.soy',
-      from: 'no-reply@ds.com',
+      to: 'info@haciendademolinos.com.ar',
+      from: 'info@haciendademolinos.com.ar',
       from_name: 'Hacienda de Molinos',
       subject: 'Contacto'
     }
 
-    axios.post('', { ...data, ...sender }).then(data => {
+    axios.post('http://marianoarias.soy/sites/hacienda/backend/send-email.php', { ...data, ...sender }).then(data => {
       if (data.data === 'success') {
         setSended(true)
         setSending(false)
