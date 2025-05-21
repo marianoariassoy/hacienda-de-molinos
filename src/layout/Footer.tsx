@@ -55,6 +55,18 @@ const Footer = () => {
                 )}
               </li>
             ))}
+            <li>
+              <a
+                href='https://linktr.ee/haciendamolinos'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                {lan === 'ES' && 'Política de Sustentabilidad'}
+                {lan === 'EN' && 'Sustainability Policy'}
+                {lan === 'FR' && 'Politique de Sustainable'}
+                {lan === 'POR' && 'Política de Sustentabilidade'}
+              </a>
+            </li>
           </ul>
         </nav>
         <div className='flex flex-col gap-y-4'>

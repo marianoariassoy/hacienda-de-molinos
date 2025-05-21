@@ -22,13 +22,17 @@ const Home = () => {
 
       {windowWidth < 768 ? (
         <video
-          src='http://haciendademolinos.com.ar/backend/videos/video.mp4'
-          autoPlay
           muted
+          autoPlay
           loop
+          playsInline
           className='w-full h-screen object-cover'
-          typeof='video/mp4'
-        ></video>
+        >
+          <source
+            src='https://haciendademolinos.com.ar/backend/videos/video.mp4'
+            type='video/mp4'
+          />
+        </video>
       ) : (
         <div className='slider-container h-full'>{!loading && <Slider data={data} />}</div>
       )}

@@ -25,8 +25,15 @@ const Ubicacion = () => {
     threshold: 0.3
   })
 
-  const style = {
-    width: '100%'
+  const interactivity: any = {
+    mode: 'scroll',
+    actions: [
+      {
+        visibility: [0, 100],
+        type: 'play',
+        frames: [22]
+      }
+    ]
   }
 
   return (
@@ -40,10 +47,14 @@ const Ubicacion = () => {
             className={`col animation-fade-in ${inView2 ? 'visible' : ''}`}
             ref={ref2}
           >
-            <Lottie
-              animationData={mapa}
-              style={style}
-            />
+            <div>
+              <Lottie
+                animationData={mapa}
+                loop={false}
+                interactivity={interactivity}
+                style={{ width: '100%' }}
+              />
+            </div>
           </div>
           <div
             className={`col lg:pl-12 animation-fade-in ${inView ? 'visible' : ''}`}
@@ -102,8 +113,11 @@ const Ubicacion = () => {
         <div className='m-auto max-w-7xl px-6 lg:px-12 pb-24 pt-40 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center'>
           <div className='col fade-in-delay-2'>
             <Lottie
+              id='lottie-ruta-del-vino'
               animationData={ruta}
-              style={style}
+              autoplay={true}
+              loop={true}
+              style={{ width: '100%' }}
             />
           </div>
           <div className='col lg:pl-12 fade-in-delay'>
